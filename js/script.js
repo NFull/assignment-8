@@ -43,13 +43,15 @@ function displayResult() {
   }
 
   let resultLabel;
-  if (sum >= 15) resultLabel = 'A';
-  else if (sum >= 10) resultLabel = 'B';
-  else if (sum >= 5) resultLabel = 'C';
-  else resultLabel = 'D';
+  if (sum == 20) resultLabel = 'Plain Rice! \n You dont seem to have much going on, just like plain rice';
+  else if (sum >= 15) resultLabel = 'Pocky! \n You are a nice balance of fun and simplicity';
+  else if (sum >= 10) resultLabel = 'Lays Classic! \n You appreciate the simple things in life, but still like a bit of flavor';
+  else if (sum > 5) resultLabel = 'Cheetos! \n You enjoy a bit of excitement and crunch in your life!';
+  else if (sum == 5) resultLabel = 'Takis! \n You have a bold and outgoing personality, with a hint of spice!';
+  else resultLabel = 'Are you sure you answered the questions correctly...?';
 
   container.style.display = 'block';
-  textResult.textContent = `With a score of ${sum}, your result is: ${resultLabel}`;
+  textResult.textContent = `Your result: ${resultLabel} (Score: ${sum})`;
 }
 
 const showBtn = document.getElementById('show-result');
