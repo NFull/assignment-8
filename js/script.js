@@ -1,8 +1,9 @@
 console.log("script.js connected!");
 
-
+// Select all buttons within the #questions container //
 let buttons = document.querySelectorAll("#questions button");
 
+// Object to store user answers //
 let userAnswers = {}
 buttons.forEach(function(button) {
   button.addEventListener("click", function() {
@@ -15,6 +16,7 @@ buttons.forEach(function(button) {
   });
 });
 
+// Add event listeners to buttons for selection styling //
 buttons.forEach(function(button) {
   button.addEventListener("click", function() {
     buttons.forEach(function(btn) {
@@ -22,13 +24,12 @@ buttons.forEach(function(button) {
     });
     button.classList.add("selected");
     
-    
     let answer = button.getAttribute("data-answer");
     
   });
 });
 
-
+// Function to calculate and display result //
 function displayResult() {
   const container = document.getElementById('result-container');
   const textResult = document.getElementById('result-text');
@@ -54,5 +55,6 @@ function displayResult() {
   textResult.textContent = `Your result: ${resultLabel} (Score: ${sum})`;
 }
 
+// Attach event listener to the show result button //
 const showBtn = document.getElementById('show-result');
 if (showBtn) showBtn.addEventListener('click', displayResult);
